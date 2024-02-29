@@ -5,13 +5,18 @@ import Button from './components/Button'
 import Dialog from './components/Dialog'
 import Header from './components/Header'
 import { useChatSocket } from './useChatSocket'
+import { MultiFileList } from './components/FileUpload'
 
 const config = new Configuration({ basePath: 'http://localhost:8000' }) // TODO: This is for dev
 export const apiClient = new DefaultApi(config)
 
 function App() {
   // const { inputText, setInputText, messages, onSubmit } = useChat(apiClient)
-  const { inputText, setInputText, messages, onSubmit } = useChatSocket()
+  const { inputText, setInputText, inputFiles2, setInputFiles2, messages, onSubmit } = useChatSocket()
+  const handleFilesChanged  = (files: FileList | null) => {
+    setInputFiles2(files);
+  };
+
   return (
     <div className='flex flex-col h-full w-full justify-center'>
       <Header />
@@ -28,6 +33,8 @@ function App() {
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
             />
+            <MultiFileList setInputFiles={setInputFiles2} inputFiles={inputFiles2} />
+            {/* <MultiFileList /> */}
             <Button onClick={onSubmit} />
           </div>
         </div>
