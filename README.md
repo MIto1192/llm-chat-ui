@@ -7,6 +7,19 @@ https://zenn.dev/ktechb/articles/chatgpt-clone-stream
 - 添付ファイルの内容をUI上の会話履歴に表示する機能
 - 添付ファイルの内容を入力テキストと一緒にバックエンドに送信する機能
 
+# 実行方法
+- 実行準備
+    - 実行ブラウザー
+      - 推奨:Chrome
+    - node.js
+      - JavaScriptコードを実行したり、各種パッケージをインストールするのに必要
+      - 稼働確認済ver:v20.11.1
+    - yarn
+      - 各種パッケージをインストールするために必要
+      - 稼働確認済ver:v4.1.0
+- 実行手順
+    - 「yarn dev」でアプリを起動する
+
 # 参考サイト
 - ファイル追加・削除機能
   - https://zenn.dev/nbr41to/articles/39607375ba5aa8
